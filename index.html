@@ -2,12 +2,12 @@
 <html lang="ko" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <!--1. 아임포트 라이브러리 추가-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
+    <!--1. 아임포트 라이브러리 추가-->
     <!-- iamport.payment.js -->
     <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
     <title>import checkout</title>
@@ -20,7 +20,7 @@
     <input v-model="order.amount" placeholder="상품가격">
     <input v-model="order.buyer_tel" placeholder="주문자 전화번호">
 
-    <button v-on:click="html5Inicis">html5Inicis</button>
+    <button v-on:click="requestPay">html5Inicis</button>
 </div>
 
 </body>
@@ -35,12 +35,8 @@
                 buyer_tel : '',
             }
         },
-        // mounted () {
-        //     var IMP = window.IMP;
-        //     IMP.init("impCode");
-        // },
         methods: {
-            html5Inicis: function(){
+            requestPay: function(){
                 //1. 객체 초기화 (가맹점 식별코드 삽입)
                 var IMP = window.IMP;
                 IMP.init(this.impCode);
@@ -69,7 +65,6 @@
                     }
                     alert(msg);
                 });
-
             }
         }
     });
