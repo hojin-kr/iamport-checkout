@@ -20,7 +20,7 @@
     <input v-model="order.amount" placeholder="상품가격">
     <input v-model="order.buyer_tel" placeholder="주문자 전화번호">
 
-    <button v-on:click="requestPay">html5Inicis</button>
+    <button v-on:click="requestPay">결제 요청</button>
 </div>
 
 </body>
@@ -42,7 +42,7 @@
                 IMP.init(this.impCode);
                 //3. 결제창 호출
                 IMP.request_pay({
-                    pg : 'html5_inicis',
+                    pg : 'jtnet',
                     pay_method : 'card',
                     merchant_uid : 'merchant_' + new Date().getTime(),
                     name : this.order.name,
