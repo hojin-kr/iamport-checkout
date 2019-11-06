@@ -28,7 +28,6 @@
     let app = new Vue({
         el: '#app',
         data: {
-            resMessage: 'Ready',
             impCode : '',
             order: {
                 name : '',
@@ -36,6 +35,10 @@
                 buyer_tel : '',
             }
         },
+        // mounted () {
+        //     var IMP = window.IMP;
+        //     IMP.init("impCode");
+        // },
         methods: {
             html5Inicis: function(){
                 //1. 객체 초기화 (가맹점 식별코드 삽입)
